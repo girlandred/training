@@ -5,15 +5,6 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </div>
 
-    <div id="page-content">
-        <div class="container text-center">
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <h1 class="fw-light mt-4 text-white"> Footer</h1>
-                </div>
-            </div>
-        </div>
-    </div>
     <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
             <small>Copyright &copy;</small>
