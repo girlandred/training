@@ -13,9 +13,6 @@ function getRoute()
         case 'create':
             $view = 'create';
             break;
-        case 'formErrors':
-            $view = 'formErrors';
-            break;
         case 'show':
             $view = 'show';
             break;
