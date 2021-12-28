@@ -9,13 +9,11 @@ function getRoute()
             $view = 'home';
             break;
         case 'create':
+            include('./handlers/create.php');
             $view = 'create';
             break;
         case 'show':
             $view = 'show';
-            break;
-        case 'connection':
-            $view = 'connection';
             break;
         default:
             $view = 'error';
