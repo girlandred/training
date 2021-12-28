@@ -16,6 +16,9 @@ function getRoute()
         case 'show':
             $view = 'show';
             break;
+        case 'connection':
+            $view = 'connection';
+            break;
         default:
             $view = 'error';
     }
