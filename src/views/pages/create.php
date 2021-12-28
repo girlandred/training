@@ -5,7 +5,7 @@
         <div class="content col-12">
             <form action="create" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <label for="name" class="form-label">name</label>
+                    <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" id="name" required="required" class="text-input form-control">
                 </div>
                 <div class="mb-3">

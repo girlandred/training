@@ -4,7 +4,7 @@ require_once('constants.php');
 function getRoute()
 {
     $route = trim($_SERVER['REQUEST_URI'], '/');
-    $path = VIEW_DIR;
+    $path = VIEW_PAGES_DIR;
     switch ($route) {
         case '':
         case 'home':
@@ -20,7 +20,7 @@ function getRoute()
             $view = 'error';
     }
     if (file_exists($path . $view . '.php')) {
-        return VIEW_DIR . $view . '.php';
+        return VIEW_PAGES_DIR . $view . '.php';
     }
-    return VIEW_DIR . $view . '.php';
+    return VIEW_PAGES_DIR . $view . '.php';
 }
