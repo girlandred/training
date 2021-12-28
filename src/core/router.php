@@ -13,7 +13,7 @@ function getRoute()
             $view = 'create';
             break;
         case 'show':
-            include('handlers/show.php');
+            include('handlers/create.php');
             $view = 'show';
             break;
         default:
