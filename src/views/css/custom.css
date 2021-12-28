@@ -1,6 +1,5 @@
 body {
     margin: 0 auto;
-    border-top: 1px solid;
     padding-top: calc(var(--bs-gutter-x) * .5);
     padding-bottom: calc(var(--bs-gutter-x) * .5);
     align-items: center;
@@ -9,7 +8,6 @@ body {
 
 h1 {
     font-size: 7.5em;
-    margin: 15px 0px;
     font-weight: bold;
 }
 
@@ -22,7 +20,6 @@ p {
 }
 
 .btn {
-    z-index: 1;
     overflow: hidden;
     background: transparent;
     position: relative;
@@ -35,4 +32,8 @@ p {
     font-weight: bold;
     color: #0d6efd;
     margin: 5px 0px;
+}
+
+.min-h100 {
+    min-height: calc(100vh - 128px);
 }
