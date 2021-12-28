@@ -9,10 +9,11 @@ function getRoute()
             $view = 'home';
             break;
         case 'create':
-            include('./handlers/create.php');
+            include('handlers/create.php');
             $view = 'create';
             break;
         case 'show':
+            include_once('handlers/show.php');
             $view = 'show';
             break;
         default:
