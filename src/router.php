@@ -1,6 +1,4 @@
 <?php
-require_once('constants.php');
-
 function getRoute()
 {
     $route = trim($_SERVER['REQUEST_URI'], '/');
@@ -26,4 +24,9 @@ function getRoute()
         return VIEW_PAGES_DIR . $view . '.php';
     }
     return VIEW_PAGES_DIR . $view . '.php';
+}
+
+function loadPage()
+{
+    require getRoute();
 }
