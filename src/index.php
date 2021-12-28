@@ -1,7 +1,6 @@
 <?php
-require_once('core/constants.php');
-require('core/connection.php');
-require('core/router.php');
+require( __DIR__ . '/core/constants.php');
+require(CORE . '/router.php');
 
 include(VIEW_LAYOUTS_DIR . 'header.php');
 loadPage();
