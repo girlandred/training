@@ -1,25 +1,26 @@
 <?php include('handlers/show.php'); ?>
+<?php include('handlers/delete.php'); ?>
 
 <div class="container min-h100">
     <div class="row">
         <div class="content col-12">
             <table class="table">
                 <thead>
+                    <th>#</th>
                     <th>Title</th>
                     <th>Vendor</th>
                     <th>Country</th>
                     <th>Quantity</th>
                 </thead>
                 <tbody>
-                    <?php foreach ($result as $product) : ?>
-                        <tr id="<?php echo $product['id']; ?>">
-                            <td id="title_val<?php echo $product['id'];?>"><?php echo $product['title'] ?></td>
-                            <td id="vendor_val<?php echo $product['id'];?>"><?php echo $product['vendor'] ?></td>
-                            <td id="country_val<?php echo $product['id'];?>"><?php echo $product['country'] ?></td>
-                            <td id="quantity_val<?php echo $product['id'];?>"><?php echo $product['quantity'] ?></td>
-                            <td>
-                                <input type='button' class="delete_button" id="delete_button<?php echo $product['id'];?>" value="delete" onclick="delete_row('<?php echo $product['id'];?>');">
-                            </td>
+                    <?php foreach ($result as $key => $product) : ?>
+                        <tr>
+                            <td><?php echo $key + 1; ?></td>
+                            <td><?php echo $product['title'] ?></td>
+                            <td><?php echo $product['vendor'] ?></td>
+                            <td><?php echo $product['country'] ?></td>
+                            <td><?php echo $product['quantity'] ?></td>
+                            <td><button type="submit" name="delete" class="btn btn-primary">Delete</button></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
