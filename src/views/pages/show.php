@@ -1,5 +1,4 @@
 <?php include('handlers/show.php'); ?>
-<?php include('handlers/delete.php'); ?>
 
 <div class="container min-h100">
     <div class="row">
@@ -13,16 +12,21 @@
                     <th>Quantity</th>
                 </thead>
                 <tbody>
-                    <?php foreach ($result as $key => $product) : ?>
-                        <tr>
-                            <td><?php echo $key + 1; ?></td>
-                            <td><?php echo $product['title'] ?></td>
-                            <td><?php echo $product['vendor'] ?></td>
-                            <td><?php echo $product['country'] ?></td>
-                            <td><?php echo $product['quantity'] ?></td>
-                            <td><button type="submit" name="delete" class="btn btn-primary">Delete</button></td>
-                        </tr>
-                    <?php endforeach; ?>
+                    <?php if ($result->num_rows > 0) : ?>
+                        <?php while ($product = mysqli_fetch_row($result)) : ?>
+
+                            <tr>
+                                <th scope="row"><?php echo $product[0]; ?></th>
+                                <td><?php echo $product[1] ?></td>
+                                <td><?php echo $product[2] ?></td>
+                                <td><?php echo $product[2] ?></td>
+                                <td><?php echo $product[4] ?></td>
+                                <td>
+                                    <a href="javascript:void(0)" class="delete" data-id="<?php echo $product[0]; ?>">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

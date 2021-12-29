@@ -1,16 +1,20 @@
-// function delete_row(id) {
-//     $.ajax({
-//         type: 'POST',
-//         url: 'delete.php',
-//         data: {
-//             delete_row: 'delete_row',
-//             product_id: id,
-//         },
-//         success: function(response) {
-//             if (response == "success") {
-//                 var product = document.getElementById("product" + id);
-//                 product.parentNode.removeChild(product);
-//             }
-//         }
-//     });
-// }
+$(document).ready(function($) {
+    $('body').on('click', '.delete', function() {
+        if (confirm("Delete Record?") == true) {
+            var id = $(this).data('id');
+            $.ajax({
+                type: "POST",
+                url: "delete.php",
+                data: { id: id },
+                dataType: 'json',
+                success: function(res) {
+                    $('#title').html(res.title);
+                    $('#vendor').html(res.vendor);
+                    $('#country').html(res.country);
+                    $('#quantity').html(res.quantity);
+                    window.location.reload();
+                }
+            });
+        }
+    });
+});
