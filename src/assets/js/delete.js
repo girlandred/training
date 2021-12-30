@@ -4,8 +4,8 @@ $(document).ready(function($) {
             var id = $(this).data('id');
             $.ajax({
                 type: "POST",
-                url: "delete.php",
-                data: { id: id },
+                url: "/show",
+                data: { id: id, type: 'delete' },
                 dataType: 'json',
                 success: function(res) {
                     $('#title').html(res.title);
