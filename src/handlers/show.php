@@ -1,8 +1,9 @@
 <?php
 include 'core/connection.php';
 
-$sql = "SELECT * FROM products";
-$result = mysqli_query($conn, $sql);
+
+// $sql = "SELECT * FROM products";
+// $result = mysqli_query($conn, $sql);
 
 if (isset($_POST['type']) && $_POST['type'] === 'delete') {
     $id = $_POST['id'];
@@ -13,4 +14,7 @@ if (isset($_POST['type']) && $_POST['type'] === 'delete') {
     } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }
+} else {
+    $sql = "SELECT * FROM products";
+    $result = mysqli_query($conn, $sql);
 }

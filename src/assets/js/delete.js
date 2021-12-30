@@ -12,7 +12,7 @@ $(document).ready(function($) {
                     $('#vendor').html(res.vendor);
                     $('#country').html(res.country);
                     $('#quantity').html(res.quantity);
-                    window.location.reload();
+                    window.location.reload(true);
                 }
             });
         }

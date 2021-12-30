@@ -13,19 +13,21 @@
                 </thead>
                 <tbody>
                     <?php if ($result->num_rows > 0) : ?>
-                        <?php while ($product = mysqli_fetch_row($result)) : ?>
-
+                        <?php foreach ($result as $product) : ?>
                             <tr>
-                                <th scope="row"><?php echo $product[0]; ?></th>
-                                <td><?php echo $product[1] ?></td>
-                                <td><?php echo $product[2] ?></td>
-                                <td><?php echo $product[2] ?></td>
-                                <td><?php echo $product[4] ?></td>
+                                <th scope="row"><?php echo $product['id']; ?></th>
+                                <td><?php echo $product['title'] ?></td>
+                                <td><?php echo $product['vendor'] ?></td>
+                                <td><?php echo $product['country'] ?></td>
+                                <td><?php echo $product['quantity'] ?></td>
                                 <td>
-                                    <a href="javascript:void(0)" class="delete" data-id="<?php echo $product[0]; ?>">Delete</a>
+                                    <a href="javascript:void(0)" class="edit" data-id="<?php echo $product['id']; ?>">Edit</a>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)" class="delete" data-id="<?php echo $product['id']; ?>">Delete</a>
                                 </td>
                             </tr>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
             </table>

@@ -2,10 +2,7 @@
 function getRoute()
 {
     $route = trim($_SERVER['REQUEST_URI'], '/');
-    $routePaths = explode('/', $route);
-    $view = $routePaths[0] ?? '';
-    $id = $routePaths[1] ?? null;
-    switch ($view) {
+    switch ($route) {
         case '':
         case 'home':
             $view = 'home';
