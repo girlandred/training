@@ -16,7 +16,6 @@ function getRoute()
             break;
         case 'show':
             require(HENDLERS . '/show.php');
-            require(HENDLERS . '/delete.php');
             $view = 'show';
             break;
         default:
