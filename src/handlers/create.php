@@ -13,12 +13,16 @@ if (isset($_POST["create"])) {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
     }
     // header("Location: /show.php");
-} else {
-    $sql = "UPDATE products set id='" . $id . "', title='" . $_POST['title'] . "', vendor='" . $_POST['vendor'] . "', country='" . $_POST['country'] . "', quantity ='" . $_POST['quantity'] . "' WHERE id='" . $id . "'";
-}
-$res = mysqli_query($conn, $sql);
-if ($res) {
-    echo json_encode($res);
-} else {
-    echo "Error: " . $sql . "" . mysqli_error($conn);
+} elseif (isset($_POST["edit"])) {
+    $title = $_POST['title'];
+    $vendor = $_POST['vendor'];
+    $country = $_POST['country'];
+    $quantity = $_POST['quantity'];
+    $sql = "UPDATE products set id='" . $id . "', title='" . $title . "', vendor='" . $vendor . "', country='" . $country . "', quantity ='" . $quantity . "' WHERE id='" . $id . "'";
+    $res = mysqli_query($conn, $sql);
+    if ($res) {
+        echo json_encode($res);
+    } else {
+        echo "Error: " . $sql . "" . mysqli_error($conn);
+    }
 }
