@@ -19,11 +19,11 @@
 // });
 
 $(document).on('click', '.update', function(e) {
-    var id = $(this).attr("data-id");
-    var title = $(this).attr("data-title");
-    var vendor = $(this).attr("data-vendor");
-    var country = $(this).attr("data-country");
-    var quantity = $(this).attr("data-quantity");
+    var id = $(this).attr("id");
+    var title = $(this).attr("title");
+    var vendor = $(this).attr("vendor");
+    var country = $(this).attr("country");
+    var quantity = $(this).attr("quantity");
     $('#id').val(id);
     $('#title').val(title);
     $('#vendor').val(vendor);
