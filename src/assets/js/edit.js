@@ -5,15 +5,14 @@ $(document).ready(function($) {
         $.ajax({
             type: "POST",
             url: "edit.php",
-            data: { id: id },
+            data: { id: id, type: 'edit' },
             dataType: 'json',
             success: function(res) {
-                $('#custCrudModal').html("Edit");
-                $('#ajax-modal').modal('show');
-                $('#custId').val(res.custId);
-                $('#fname').val(res.fname);
-                $('#lname').val(res.lname);
-                $('#email').val(res.email);
+                $('#id').html(res.id);
+                $('#title').html(res.title);
+                $('#vendor').html(res.vendor);
+                $('#country').html(res.country);
+                $('#quantity').html(res.quantity);
             }
         });
     });
