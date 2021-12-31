@@ -4,7 +4,7 @@ $(document).ready(function($) {
 
         $.ajax({
             type: "POST",
-            url: "edit.php",
+            url: "/show",
             data: { id: id, type: 'edit' },
             dataType: 'json',
             success: function(res) {
