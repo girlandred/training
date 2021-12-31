@@ -13,7 +13,7 @@ if (isset($_POST["create"])) {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
     }
     // header("Location: /show.php");
-} elseif (isset($_POST["edit"])) {
+} elseif (isset($_POST["update"])) {
     $title = $_POST['title'];
     $vendor = $_POST['vendor'];
     $country = $_POST['country'];

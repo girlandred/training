@@ -36,7 +36,7 @@ $(document).on('click', '#update', function(e) {
     $.ajax({
         data: data,
         type: "POST",
-        url: "/show",
+        url: "/create",
         success: function(dataResult) {
             var dataResult = JSON.parse(dataResult);
             if (dataResult.statusCode == 200) {
