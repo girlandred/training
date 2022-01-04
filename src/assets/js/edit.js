@@ -17,7 +17,7 @@ $(document).ready(function() {
                 'quantity': quantity,
                 type: update
             },
-            success: function(res) {
+            success: function() {
                 $('#title').val('');
                 $('#vendor').val('');
                 $('#country').val('');
