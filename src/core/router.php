@@ -19,17 +19,20 @@ function getRoute()
             require(HENDLERS . '/show.php');
             $view = 'show';
             break;
-        default:
-            var_dump($id, $view);
+        case 'error':
             $view = 'error';
+            break;
+        default:
+            die('<meta http-equiv="refresh" content="0;URL=/error">');
     }
-    if (file_exists(VIEW_PAGES_DIR . '/' . $routeView . '.php')) {
-        return VIEW_PAGES_DIR . '/' . $routeView . '.php';
+    if (file_exists(VIEW_PAGES_DIR . '/' . $view . '.php')) {
+        require VIEW_PAGES_DIR . '/' . $view . '.php';
+    } else {
+        header('Location: /error');
     }
-    return VIEW_PAGES_DIR . '/' . $routeView . '.php';
 }
 
-function loadPage()
-{
-    require(getRoute());
-}
+// function loadPage()
+// {
+//     require(getRoute());
+// }

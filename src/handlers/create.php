@@ -18,9 +18,8 @@ if (isset($_POST["create"])) {
     $vendor = $_POST['vendor'];
     $country = $_POST['country'];
     $quantity = $_POST['quantity'];
-    $sql = "UPDATE products set id='" . $id . "', title='" . $title . "', vendor='" . $vendor . "', country='" . $country . "', quantity ='" . $quantity . "' WHERE id='" . $id . "'";
-    $res = mysqli_query($conn, $sql);
-    if ($res) {
+    $sql = "UPDATE products SET title='$title', vendor='$vendor', country='" . $country . "', quantity ='$quantity' WHERE id='$id'";
+    if (mysqli_query($conn, $sql)) {
         var_dump($_POST);
     } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);

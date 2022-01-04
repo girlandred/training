@@ -10,19 +10,19 @@
                     <th>Vendor</th>
                     <th>Country</th>
                     <th>Quantity</th>
+                    <th>Action</th>
                 </thead>
                 <tbody>
                     <?php if ($result->num_rows > 0) : ?>
                         <?php foreach ($result as $key => $product) : ?>
                             <tr>
-                                <!-- <th scope="row"><?php echo $product['id']; ?></th> -->
                                 <td><?php echo $key + 1 ?></td>
                                 <td><?php echo $product['title'] ?></td>
                                 <td><?php echo $product['vendor'] ?></td>
                                 <td><?php echo $product['country'] ?></td>
                                 <td><?php echo $product['quantity'] ?></td>
                                 <td>
-                                    <a href="/create/<?php echo $product['id']; ?>" class="edit">Edit</a>
+                                    <a href="create/<?php echo $product['id']; ?>" class="edit">Edit</a>
                                 </td>
                                 <td>
                                     <a href="javascript:void(0)" class="delete" data-id="<?php echo $product['id']; ?>">Delete</a>

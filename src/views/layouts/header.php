@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav me-auto mb-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="home">Home</a>
+                        <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="create">Create</a>
+                        <a class="nav-link" href="/create">Create</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="show">Show</a>
+                        <a class="nav-link" href="/show">Show</a>
                     </li>
                 </ul>
             </div>
