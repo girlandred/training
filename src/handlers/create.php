@@ -1,5 +1,7 @@
 <?php
 include 'core/connection.php';
+
+
 if (isset($_POST["create"])) {
     $title = $_POST['title'];
     $vendor = $_POST['vendor'];
@@ -25,3 +27,5 @@ if (isset($_POST["create"])) {
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }
 }
+$querry = "SELECT * FROM products WHERE id='$id'";
+$result = mysqli_query($conn, $querry);
