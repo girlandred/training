@@ -13,7 +13,7 @@ if (isset($_POST["create"])) {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
     }
     // header("Location: /show.php");
-} elseif (isset($_POST["update"])) {
+} elseif (isset($_POST["edit"])) {
     $title = $_POST['title'];
     $vendor = $_POST['vendor'];
     $country = $_POST['country'];
@@ -21,7 +21,7 @@ if (isset($_POST["create"])) {
     $sql = "UPDATE products set id='" . $id . "', title='" . $title . "', vendor='" . $vendor . "', country='" . $country . "', quantity ='" . $quantity . "' WHERE id='" . $id . "'";
     $res = mysqli_query($conn, $sql);
     if ($res) {
-        echo json_encode($res);
+        var_dump($_POST);
     } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }

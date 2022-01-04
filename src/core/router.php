@@ -2,7 +2,11 @@
 function getRoute()
 {
     $route = trim($_SERVER['REQUEST_URI'], '/');
-    switch ($route) {
+    $routePaths = explode('/', $route);
+    $routeView = $routePaths[0] ?? '';
+    $id = $routePaths[1] ?? null;
+
+    switch ($routeView) {
         case '':
         case 'home':
             $view = 'home';
@@ -16,12 +20,13 @@ function getRoute()
             $view = 'show';
             break;
         default:
+            var_dump($id, $view);
             $view = 'error';
     }
-    if (file_exists(VIEW_PAGES_DIR . '/' . $view . '.php')) {
-        return VIEW_PAGES_DIR . '/' . $view . '.php';
+    if (file_exists(VIEW_PAGES_DIR . '/' . $routeView . '.php')) {
+        return VIEW_PAGES_DIR . '/' . $routeView . '.php';
     }
-    return VIEW_PAGES_DIR . '/' . $view . '.php';
+    return VIEW_PAGES_DIR . '/' . $routeView . '.php';
 }
 
 function loadPage()

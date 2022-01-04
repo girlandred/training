@@ -1,51 +1,30 @@
-// $(document).ready(function($) {
-//     $('body').on('click', '.edit', function() {
-//         var id = $(this).data('id');
-
-//         $.ajax({
-//             type: "POST",
-//             url: "/show",
-//             data: { id: id, type: 'edit' },
-//             dataType: 'json',
-//             success: function(res) {
-//                 $('#id').html(res.id);
-//                 $('#title').html(res.title);
-//                 $('#vendor').html(res.vendor);
-//                 $('#country').html(res.country);
-//                 $('#quantity').html(res.quantity);
-//             }
-//         });
-//     });
-// });
-
-$(document).on('click', '.update', function(e) {
-    var id = $(this).attr("id");
-    var title = $(this).attr("title");
-    var vendor = $(this).attr("vendor");
-    var country = $(this).attr("country");
-    var quantity = $(this).attr("quantity");
-    $('#id').val(id);
-    $('#title').val(title);
-    $('#vendor').val(vendor);
-    $('#country').val(country);
-    $('#quantity').val(quantity);
-});
-
-$(document).on('click', '#update', function(e) {
-    var data = $("#update_form").serialize();
-    $.ajax({
-        data: data,
-        type: "POST",
-        url: "/create",
-        success: function(dataResult) {
-            var dataResult = JSON.parse(dataResult);
-            if (dataResult.statusCode == 200) {
-                $('#editEmployeeModal').modal('hide');
-                alert('Data updated successfully !');
-                location.reload();
-            } else if (dataResult.statusCode == 201) {
-                alert(dataResult);
+$(document).ready(function() {
+    $(document).on('click', '.edit', function() {
+        var id = $(this).data('id');
+        var title = $('#title').val();
+        var vendor = $('#vendor').val();
+        var country = $('#country').val();
+        var quantity = $('#quantity').val();
+        $.ajax({
+            type: 'POST',
+            url: '/create',
+            data: {
+                'update': 1,
+                'id': id,
+                'title': title,
+                'vendor': vendor,
+                'country': country,
+                'quantity': quantity,
+                type: update
+            },
+            success: function(res) {
+                $('#title').val('');
+                $('#vendor').val('');
+                $('#country').val('');
+                $('#quantity').val('');
+                $('.create').show();
+                $('.edit').hide();
             }
-        }
+        });
     });
 });
