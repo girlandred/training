@@ -6,10 +6,9 @@
             </h1>
             <p>
                 The page you are looking for does not exist.
-                But you can click the button below
+                But you can click the button home
                 to go back to the homepage.
             </p>
-            <a class="btn btn-primary" href="home" role="button">Home</a>
         </div>
     </div>
 </div>
