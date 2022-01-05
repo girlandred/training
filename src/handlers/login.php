@@ -10,6 +10,7 @@ if (isset($_POST['login'])) {
     if ($numRows  == 1) {
         $row = mysqli_fetch_assoc($res);
         if (password_verify($password, $row['password'])) {
+            header('Location: /home');
             var_dump($_POST);
         } else {
             var_dump('Error');
