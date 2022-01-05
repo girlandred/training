@@ -23,6 +23,7 @@ function getRoute()
             $view = 'error';
             break;
         case 'login':
+            require(HENDLERS . '/login.php');
             $view = 'login';
             break;
         case 'register':
