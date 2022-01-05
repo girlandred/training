@@ -26,6 +26,8 @@ if (isset($_POST["create"])) {
     } else {
         echo "Error: " . $sql . "" . mysqli_error($conn);
     }
+} elseif ($id) {
+    $querry = "SELECT * FROM products WHERE id='$id' LIMIT 1";
+    $result = mysqli_query($conn, $querry);
+    $row = $result->fetch_assoc();
 }
-$querry = "SELECT * FROM products WHERE id='$id'";
-$result = mysqli_query($conn, $querry);

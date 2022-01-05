@@ -22,6 +22,12 @@ function getRoute()
         case 'error':
             $view = 'error';
             break;
+        case 'login':
+            $view = 'login';
+            break;
+        case 'register':
+            $view = 'register';
+            break;
         default:
             die('<meta http-equiv="refresh" content="0;URL=/error">');
     }
