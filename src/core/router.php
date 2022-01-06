@@ -39,7 +39,7 @@ function getRoute()
     if (file_exists(VIEW_PAGES_DIR . '/' . $view . '.php')) {
         require VIEW_PAGES_DIR . '/' . $view . '.php';
     } else {
-        header('Location: /error');
+        echo ('<meta http-equiv="refresh" content="0;URL=/error">');
     }
 }
 

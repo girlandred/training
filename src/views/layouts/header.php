@@ -1,6 +1,5 @@
 <?php
 include HENDLERS . '/login.php';
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +43,8 @@ session_start();
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="/logout">logout</a></li>
+                            <li><a class="dropdown-item" href=<?= (empty($_SESSION)) ? '/login' : '/logout'; ?>><?= (empty($_SESSION)) ? 'Login' : 'Logout'; ?></a></li>
+
                         </ul>
                     </li>
                 </ul>

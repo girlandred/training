@@ -1,5 +1,7 @@
 <?php
-require( __DIR__ . '/core/constants.php');
+session_start();
+
+require(__DIR__ . '/core/constants.php');
 require(CORE . '/router.php');
 
 include(VIEW_LAYOUTS_DIR . 'header.php');
