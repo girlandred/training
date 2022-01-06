@@ -1,3 +1,7 @@
+<?php
+include HENDLERS . '/login.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +32,20 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/show">Show</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php if (isset($_SESSION['username'])) echo $_SESSION['username'] ?>
+                        </a>
+                        <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/create">Add Product</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="/logout">logout</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

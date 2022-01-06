@@ -10,8 +10,9 @@ if (isset($_POST['login'])) {
     if ($numRows  == 1) {
         $row = mysqli_fetch_assoc($res);
         if (password_verify($password, $row['password'])) {
-            header('Location: /home');
-            var_dump($_POST);
+            $_SESSION["id"] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            echo '<meta http-equiv="refresh" content="0; URL=/home">';
         } else {
             var_dump('Error');
         }

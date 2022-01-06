@@ -37,6 +37,7 @@ if (isset($_POST['register'])) {
             $sql = "INSERT INTO users(username, password) VALUES ('$username', '$hashed_pass')";
             $result = mysqli_query($conn, $sql);
             unset($_POST['register'], $_POST['passwordConf']);
+            echo '<meta http-equiv="refresh" content="0; URL=/login">';
         } else {
             var_dump('Error');
         }
