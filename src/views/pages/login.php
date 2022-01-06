@@ -12,6 +12,8 @@
                 </div>
                 <div class="mb-3">
                     <button type="submit" name="login" class="btn btn-primary">Login</button>
+                    <span class=" m-auto">Or</span>
+                    <a href="/register" class="btn btn-primary" type="button">Sign Up</a>
                 </div>
             </form>
 

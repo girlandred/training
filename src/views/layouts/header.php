@@ -43,7 +43,7 @@ include HENDLERS . '/login.php';
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href=<?= (empty($_SESSION)) ? '/login' : '/logout'; ?>><?= (empty($_SESSION)) ? 'Login' : 'Logout'; ?></a></li>
+                            <li><a class="dropdown-item" name="<?= (empty($_SESSION)) ? 'login' : 'logout';  ?>" href=<?= (empty($_SESSION)) ? '/login' : '/logout'; ?>><?= (empty($_SESSION)) ? 'Login' : 'Logout'; ?></a></li>
 
                         </ul>
                     </li>
