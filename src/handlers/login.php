@@ -10,7 +10,7 @@ if (isset($_POST['login'])) {
     if ($numRows  == 1) {
         $row = mysqli_fetch_assoc($res);
         if (password_verify($password, $row['password'])) {
-            $_SESSION["id"] = $row['id'];
+            $_SESSION["id_user"] = $row['id_user'];
             $_SESSION['username'] = $row['username'];
             echo '<meta http-equiv="refresh" content="0; URL=/home">';
         } else {

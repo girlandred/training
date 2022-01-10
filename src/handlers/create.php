@@ -7,7 +7,7 @@ if (isset($_POST["create"])) {
     $vendor = $_POST['vendor'];
     $country = $_POST['country'];
     $quantity = $_POST['quantity'];
-    $user_id = $_SESSION['id'];
+    $user_id = $_SESSION['id_user'];
     $sql = "INSERT INTO products(title, vendor, country, quantity, user_id) 
     VALUES ('$title', '$vendor', '$country', '$quantity', '$user_id')";
     if (mysqli_query($conn, $sql)) {
