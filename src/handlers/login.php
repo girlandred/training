@@ -20,11 +20,3 @@ if (isset($_POST['login'])) {
         var_dump('Error');
     }
 }
-
-
-if (isset($_POST['logout'])) {
-    unset($_SESSION['id']);
-    unset($_SESSION['username']);
-    session_destroy();
-    echo '<meta http-equiv="refresh" content="0; URL=/home">';
-}
