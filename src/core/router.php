@@ -30,6 +30,10 @@ function getRoute()
             require(HENDLERS . '/register.php');
             $view = 'register';
             break;
+        case 'logout':
+            require(HENDLERS . '/logout.php');
+            $view = 'home';
+            break;
         default:
             die('<meta http-equiv="refresh" content="0;URL=/error">');
     }
