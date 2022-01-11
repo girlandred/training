@@ -12,7 +12,7 @@ function getRoute()
             $view = 'home';
             break;
         case 'create':
-            require(HENDLERS . '/create.php');
+            // require(HENDLERS . '/create.php');
             $view = 'create';
             break;
         case 'show':

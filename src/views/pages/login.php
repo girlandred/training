@@ -10,7 +10,7 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" name="password" id="password" required="required" class="text-input form-control">
                 </div>
-                <div class="mb-3">
+                <div class="d-grid gap-2 col-3 mx-auto">
                     <button type="submit" name="login" class="btn btn-primary">Login</button>
                     <span class=" m-auto">Or</span>
                     <a href="/register" class="btn btn-primary" type="button">Sign Up</a>

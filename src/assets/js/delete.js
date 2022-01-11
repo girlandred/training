@@ -8,13 +8,13 @@ $(document).ready(function($) {
                 data: { id: id, type: 'delete' },
                 dataType: 'json',
                 success: function(res) {
-                    $('#title').html(res.title);
-                    $('#vendor').html(res.vendor);
-                    $('#country').html(res.country);
-                    $('#quantity').html(res.quantity);
-                    window.location.reload(true);
+                    // $('#title').html(res.title);
+                    // $('#vendor').html(res.vendor);
+                    // $('#country').html(res.country);
+                    // $('#quantity').html(res.quantity);
                 }
             });
         }
+
     });
 });

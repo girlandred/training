@@ -28,10 +28,10 @@ include HENDLERS . '/login.php';
                         <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/create">Create</a>
+                        <a class="nav-link" href=<?= (empty($_SESSION)) ? '/login' : '/create'; ?>>Create</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/show">Show</a>
+                        <a class="nav-link" href=<?= (empty($_SESSION)) ? '/login' : '/show'; ?>>Show</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
