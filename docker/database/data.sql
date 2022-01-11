@@ -1,4 +1,4 @@
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id_user` SERIAL,
   `username` VARCHAR(256) NOT NULL,
   `password` VARCHAR(256) NOT NULL,
