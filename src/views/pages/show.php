@@ -3,6 +3,7 @@
 <div class="container min-h100">
     <div class="row">
         <div class="content col-12">
+            
             <table class="table">
                 <thead>
                     <th>#</th>

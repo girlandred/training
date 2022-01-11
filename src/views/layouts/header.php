@@ -1,6 +1,5 @@
 <?php
 include HENDLERS . '/login.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +39,7 @@ include HENDLERS . '/login.php';
                             <?php if (isset($_SESSION['username'])) echo $_SESSION['username'] ?>
                         </a>
                         <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/create">Add Product</a></li>
+                            <li><a class="dropdown-item" href=<?= (empty($_SESSION)) ? '/login' : '/create'; ?>>Add Product</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

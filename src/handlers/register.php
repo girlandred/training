@@ -23,14 +23,14 @@ function validateUser($user)
 }
 
 if (isset($_POST['register'])) {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $passwordConf = $_POST["passwordConf"];
     $errors = validateUser($_POST);
     $sql = "SELECT * FROM users WHERE (username='$username');";
     $res = mysqli_query($conn, $sql);
     if (mysqli_num_rows($res) > 0) {
-        var_dump('Error');
+        echo 'This username is used';
     } else {
         if (count($errors) === 0) {
             $hashed_pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -39,7 +39,7 @@ if (isset($_POST['register'])) {
             unset($_POST['register'], $_POST['passwordConf']);
             echo '<meta http-equiv="refresh" content="0; URL=/login">';
         } else {
-            var_dump('Error');
+            echo 'Wrong credentials';
         }
     }
 }

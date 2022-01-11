@@ -5,7 +5,10 @@ $(document).ready(function($) {
             $.ajax({
                 type: "POST",
                 url: "/show",
-                data: { id: id, type: 'delete' },
+                data: {
+                    id: id,
+                    type: 'delete'
+                },
                 success: function(res) {
                     $('#title').html(res.title);
                     $('#vendor').html(res.vendor);

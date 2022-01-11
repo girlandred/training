@@ -3,6 +3,16 @@
 <div class="container min-h100">
     <div class="row">
         <div class="content col-12">
+            <?php
+            if (isset($_SESSION['status'])) {
+            ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $_SESSION['status']; ?>
+                </div>
+            <?php
+                unset($_SESSION['status']);
+            }
+            ?>
             <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>

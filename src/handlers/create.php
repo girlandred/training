@@ -1,23 +1,21 @@
 <?php
 include 'core/connection.php';
 
-
-if (isset($_POST["create"])) {
+if (isset($_POST['create'])) {
     $title = $_POST['title'];
     $vendor = $_POST['vendor'];
     $country = $_POST['country'];
     $quantity = $_POST['quantity'];
     $user_id = $_SESSION['id_user'];
 
-    $sql = "INSERT IGNORE INTO products(title, vendor, country, quantity, user_id) 
+    $sql = "INSERT INTO products(title, vendor, country, quantity, user_id) 
     VALUES ('$title', '$vendor', '$country', '$quantity', '$user_id')";
-    $result = mysqli_query($conn, $sql);
-    if (!$result) {
-        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+    if (mysqli_query($conn, $sql)) {
+        $_SESSION['status'] = 'Data successfully processed';
     } else {
-        echo 'Success';
+        echo 'Error: ' . $sql . '' . mysqli_error($conn);
     }
-} elseif (isset($_POST["edit"])) {
+} elseif (isset($_POST['edit'])) {
     $title = $_POST['title'];
     $vendor = $_POST['vendor'];
     $country = $_POST['country'];
@@ -26,7 +24,7 @@ if (isset($_POST["create"])) {
     if (mysqli_query($conn, $sql)) {
         var_dump($_POST);
     } else {
-        echo "Error: " . $sql . "" . mysqli_error($conn);
+        echo 'Error: ' . $sql . '' . mysqli_error($conn);
     }
 } elseif ($id) {
     $querry = "SELECT * FROM products WHERE id='$id' LIMIT 1";
