@@ -22,7 +22,7 @@ if (isset($_POST['create'])) {
     $quantity = $_POST['quantity'];
     $sql = "UPDATE products SET title='$title', vendor='$vendor', country='$country', quantity ='$quantity' WHERE id='$id'";
     if (mysqli_query($conn, $sql)) {
-        var_dump($_POST);
+        $_SESSION['status'] = 'Data successfully processed';
     } else {
         echo 'Error: ' . $sql . '' . mysqli_error($conn);
     }
