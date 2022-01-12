@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $("#content").load("show/1");
     $(".page-link").click(function() {
         var id = $(this).attr("data-id");
         var select_id = $(this).parent().attr("id");
@@ -10,8 +9,7 @@ $(document).ready(function() {
                 page: id
             },
             cache: false,
-            success: function(dataResult) {
-                $("#content").html(dataResult);
+            success: function() {
                 $(".pageitem").removeClass("active");
                 $("#" + select_id).addClass("active");
             }

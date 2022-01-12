@@ -45,7 +45,7 @@ $total_pages = ceil($total_records / $limit);
                     for ($i = 1; $i <= $total_pages; $i++) {
                         if ($i == 1) {
                 ?>
-                            <li class="pageitem active" id="<?php echo $i;?>"><a href="javascript:void(0)" data-id="<?php echo $i;?>" class="page-link" ><?php echo $i;?></a></li>
+                            <li class="pageitem active" id="<?php echo $i; ?>"><a href="javascript:void(0)" data-id="<?php echo $i; ?>" class="page-link"><?php echo $i; ?></a></li>
 
                         <?php
                         } else {
